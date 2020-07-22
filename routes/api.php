@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource("contactos","ContactosController");
+
+//Route::destroy('contactos/{id}', 'ContactosController');
+
+Route::post('contactos{id}', 'ContactosController@edit');
